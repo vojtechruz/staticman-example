@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import moment from 'moment';
 
 import {rhythm} from '../utils/typography'
 
@@ -14,21 +15,22 @@ class BlogIndex extends React.Component {
             <div>
                 <Helmet title={siteTitle}/>
                 {comments.map(({node}) => {
+                    const dateString = moment.unix(node.date).format("DD.MM.YYYY HH:mm")
                     return (
-                        <div className="row">
-                            <div>
-                                <div className="card">
+                        <div className="row" key={node._id}>
+                            <div className="card">
                                     <div className="card-content">
-                                        <span className="card-title">{node.name} &lt;{node.email}&gt;</span>
-
+                                        <div className="card-title">
+                                            <span className="name"> {node.name}</span>
+                                            <span className="email">&lt;{node.email}&gt;</span>
+                                            <span className="date">{dateString}</span>
+                                        </div>
                                     </div>
-                                    <div className="card-action">
-                                        <p>{node.message}</p>
-                                    </div>
+                                <div className="card-action">
+                                    <p>{node.message}</p>
                                 </div>
                             </div>
                         </div>
-
                     )
                 })}
                 <div>

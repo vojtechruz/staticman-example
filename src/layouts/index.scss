@@ -7,9 +7,20 @@ nav {
 .card-title {
   font-size: 16px!important;
   margin-bottom: 0!important;
+  display: flex!important;
+
+  .date {
+    margin-left: auto;
+  }
+
+  .email {
+    margin-left: 10px;
+  }
 }
 
 .card-content {
   padding-top: 0!important;
   padding-bottom: 0!important;
+  color: white;
+  background-color: #26a69a;
 }
