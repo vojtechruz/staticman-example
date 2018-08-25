@@ -24,3 +24,28 @@ nav {
   color: white;
   background-color: #26a69a;
 }
+
+.form {
+
+  .card-title {
+    color: white!important;
+    background-color: #26a69a!important;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 24px;
+  }
+
+  .card-content {
+    background-color: white!important;
+  }
+
+  .button-row {
+    display: flex;
+  }
+
+  button {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-bottom: 30px;
+  }
+}

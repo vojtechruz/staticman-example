@@ -33,9 +33,13 @@ class BlogIndex extends React.Component {
                         </div>
                     )
                 })}
-                <div>
-                    <form method="POST"
+                <div className="card form">
+                    <div className="card-title">
+                        New Comment
+                    </div>
+                    <form className="card-content" method="POST"
                           action="https://api.staticman.net/v2/entry/vojtechruz/staticman-example/master/comments">
+
                         <input name="options[redirect]" type="hidden" value="https://staticman-example.netlify.com/"/>
 
                         <div className="row">
@@ -56,7 +60,7 @@ class BlogIndex extends React.Component {
                                 <label htmlFor="message">Message</label>
                             </div>
                         </div>
-                        <div className="row">
+                        <div className="row button-row">
                             <button type="submit" className="waves-effect waves-light btn">Submit</button>
                         </div>
                     </form>
