@@ -10,6 +10,10 @@ class BlogIndex extends React.Component {
         const siteTitle = get(this, 'props.data.site.siteMetadata.title')
         const comments = get(this, 'props.data.allCommentsYaml.edges')
 
+        comments.sort(function(a,b){
+            return new Date(b.date) - new Date(a.date);
+        });
+
         return (
             <div>
                 <Helmet title={siteTitle}/>
