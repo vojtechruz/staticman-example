@@ -10,38 +10,63 @@ class BlogIndex extends React.Component {
         const siteTitle = get(this, 'props.data.site.siteMetadata.title')
         const comments = get(this, 'props.data.allCommentsYaml.edges')
 
-
         return (
             <div>
                 <Helmet title={siteTitle}/>
                 {comments.map(({node}) => {
                     return (
-                        <div key={node._id}>
-                            <p>{node.name}</p>
-                            <p>{node.email}</p>
-                            <p>{node.message}</p>
+                        <div className="row">
+                            <div>
+                                <div className="card">
+                                    <div className="card-content">
+                                        <span className="card-title">{node.name} &lt;{node.email}&gt;</span>
+
+                                    </div>
+                                    <div className="card-action">
+                                        <p>{node.message}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     )
                 })}
                 <div>
                     <form method="POST"
                           action="https://api.staticman.net/v2/entry/vojtechruz/staticman-example/master/comments">
                         <input name="options[redirect]" type="hidden" value="https://staticman-example.netlify.com/"/>
-                        <label><input name="fields[name]" type="text"/>Name</label>
-                        <label><input name="fields[email]" type="email"/>E-mail</label>
-                        <label><textarea name="fields[message]"/>Message</label>
 
-                        <button type="submit">Submit</button>
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input id="name" name="fields[name]" type="text" className="validate"/>
+                                <label htmlFor="name">Name</label>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input id="email" name="fields[email]" type="text" className="validate"/>
+                                <label htmlFor="email">Email</label>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input id="message" name="fields[message]" type="text" className="validate"/>
+                                <label htmlFor="message">Message</label>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <button type="submit" className="waves-effect waves-light btn">Submit</button>
+                        </div>
                     </form>
                 </div>
             </div>
-    )
+        )
     }
-    }
+}
 
-    export default BlogIndex
+export default BlogIndex
 
-    export const pageQuery = graphql`
+export const pageQuery = graphql`
     query IndexQuery {
         site {
         siteMetadata {

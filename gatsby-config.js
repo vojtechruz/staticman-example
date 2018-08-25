@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Static comments',
     author: 'Vojtech Ruzicka',
-    description: 'A starter blog demonstrating what Gatsby can do.',
+    description: 'Example project to demonstrate Staticman capabilities.',
     siteUrl: 'https://www.vojtechruzicka.com/staticman',
   },
   pathPrefix: '/gatsby-starter-blog',
@@ -44,6 +44,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
