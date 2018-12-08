@@ -1,0 +1,7 @@
+_id: ab2d7090-fafa-11e8-9558-75af92ec6f88
+name: Test
+email: test@this.com
+message: >-
+  Actually it's not an error, the Staticman API has too many requests :( Not
+  sure this would actually work! (Also don't save the user's email to Github) ;)
+date: 1544281515
