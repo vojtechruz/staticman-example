@@ -1,0 +1,56 @@
+---
+layout: layout.njk
+title: Static comments
+---
+
+{% set sortedComments = comments | getSortedComments %}
+
+{% for comment in sortedComments %}
+<div class="row">
+    <div class="card">
+        <div class="card-content">
+            <div class="card-title">
+                <span class="name"> {{ comment.name }}</span>
+                <span class="email">&lt;{{ comment.email }}&gt;</span>
+                <span class="date">{{ comment.date | date }}</span>
+            </div>
+        </div>
+        <div class="card-action">
+            <p>{{ comment.message }}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<div class="card form">
+    <div class="card-title">
+        New Comment
+    </div>
+    <form class="card-content" method="POST"
+          action="https://api.staticman.net/v2/entry/vojtechruz/staticman-example/master/comments">
+
+        <input name="options[redirect]" type="hidden" value="https://staticman-example.netlify.com/"/>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="name" name="fields[name]" type="text" class="validate">
+                <label for="name">Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" name="fields[email]" type="text" class="validate">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="message" name="fields[message]" type="text" class="validate">
+                <label for="message">Message</label>
+            </div>
+        </div>
+        <div class="row button-row">
+            <button type="submit" class="waves-effect waves-light btn">Submit</button>
+        </div>
+    </form>
+</div>
