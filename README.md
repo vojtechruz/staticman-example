@@ -27,7 +27,7 @@ To build the site for production:
 ```bash
 npm run build
 ```
-The output will be in the `public` directory.
+The output will be in the `_site` directory.
 
 ## Staticman Configuration
 Staticman is configured via the `staticman.yml` file in the root directory. It is set up to receive comments from the form and save them as YAML files in `_data/comments`.
