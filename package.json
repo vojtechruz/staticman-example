@@ -2,16 +2,15 @@
   "name": "staticman-example-eleventy",
   "version": "1.0.0",
   "description": "Example project to demonstrate Staticman capabilities.",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
     "debug": "DEBUG=Eleventy* eleventy"
   },
-  "dependencies": {
-    "materialize-css": "^1.0.0-rc.2",
-    "typeface-merriweather": "0.0.43",
-    "typeface-montserrat": "0.0.43"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "eleventy-sass": "^2.2.6",

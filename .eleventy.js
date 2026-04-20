@@ -9,10 +9,6 @@ module.exports = function (eleventyConfig) {
 
   // Copy static files
   eleventyConfig.addPassthroughCopy("static");
-  eleventyConfig.addPassthroughCopy({
-    "node_modules/materialize-css/dist/js/materialize.min.js": "js/materialize.min.js",
-    "node_modules/materialize-css/dist/css/materialize.min.css": "css/materialize.min.css"
-  });
 
   // Sass compilation
   eleventyConfig.addPlugin(eleventySass, {

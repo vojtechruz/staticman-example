@@ -1,67 +1,171 @@
-@import "../../node_modules/materialize-css/sass/materialize";
+@use "sass:color";
+
+$primary-color: #2563eb;
+$bg-color: #f8fafc;
+$text-color: #1e293b;
+$border-color: #e2e8f0;
+$card-bg: #ffffff;
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: Merriweather, Georgia, serif;
-  font-size: 16px;
-  line-height: 1.75;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Montserrat, sans-serif;
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid $border-color;
+  padding: 1.5rem 0;
+  margin-bottom: 2.5rem;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: $primary-color;
+    letter-spacing: -0.025em;
+  }
 }
 
-.main-content {
-  max-width: 42rem;
+.container {
+  max-width: 680px;
   margin: 0 auto;
-  padding: 2.625rem 1.3125rem;
+  padding: 0 1.5rem;
 }
 
-nav {
-  background-color: #26a69a;
-}
+.comment {
+  background-color: $card-bg;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 
-.card-title {
-  font-size: 16px!important;
-  margin-bottom: 0!important;
-  display: flex!important;
-
-  .date {
-    margin-left: auto;
-  }
-
-  .email {
-    margin-left: 10px;
-  }
-}
-
-.card-content {
-  padding-top: 0!important;
-  padding-bottom: 0!important;
-  color: white;
-  background-color: #26a69a;
-}
-
-.form {
-
-  .card-title {
-    color: white!important;
-    background-color: #26a69a!important;
-    padding-bottom: 12px;
-    padding-top: 12px;
-    padding-left: 24px;
-  }
-
-  .card-content {
-    background-color: white!important;
-  }
-
-  .button-row {
+  .comment-header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .name {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 1.1rem;
+    }
+
+    .date {
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+  }
+
+  .comment-body {
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+}
+
+.comment-form-container {
+  background-color: $card-bg;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: #fcfcfd;
+      transition: all 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        background-color: #fff;
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+      }
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
   }
 
   button {
-    margin-left: auto;
-    margin-right: 10px;
-    margin-bottom: 30px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    margin-top: 0.5rem;
+
+    &:hover {
+      background-color: color.adjust($primary-color, $lightness: -5%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.not-found {
+  text-align: center;
+  padding: 5rem 0;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    color: #64748b;
   }
 }

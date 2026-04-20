@@ -7,7 +7,6 @@ This is an example repository for blog post [Staticman: User generated content m
 ## Features
 -   Static comments rendered from YAML files in `_data/comments`.
 -   Comment form that submits to the Staticman API.
--   Styled with Materialize CSS and Sass.
 
 ## Getting Started
 
